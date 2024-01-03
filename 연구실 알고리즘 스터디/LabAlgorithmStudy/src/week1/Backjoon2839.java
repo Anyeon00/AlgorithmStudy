@@ -28,7 +28,7 @@ public class Backjoon2839 {
                 for (int i = fiveN; i >= 0; i--) {
                     int tmpResult = 0;
                     int five = i * 5;
-                    int threeN = 0;
+                     int threeN = 0;
                     while (tmpResult < n) {
                         tmpResult = five + threeN * 3;
                         if (tmpResult == n) {
