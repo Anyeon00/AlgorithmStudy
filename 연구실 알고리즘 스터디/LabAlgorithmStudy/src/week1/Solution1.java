@@ -45,14 +45,16 @@ public class Solution1 {
             Member hitter = members.get(st.nextToken());
             Member getter = members.get(st.nextToken());
 
+            // getter가 hitter로부터 신고받음
             getter.warned(hitter);
         }
-
+        // 신고를 k번 이상 받은 Member들은 reporter들에게 메일 발송
         for(Member m : membersTmp){
             m.sendMail();
         }
 
-        // 3. 마지막으로 (id_list순서대로)answer에 members.mailN을 담아서 return
+        // 3. 마지막으로 각 Member들이 mail받은 횟수 return
+        // (id_list순서대로)answer에 members.mailN을 담아서 return
         int[] answer = new int[id_list.length];
         for(int i = 0; i < id_list.length; i++){
             answer[i] = members.get(id_list[i]).mailN;
